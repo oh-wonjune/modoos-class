@@ -56,7 +56,8 @@ const Container: FC = () => {
     <div className="app">
         <main className="c-main">
           <aside>
-            <a href="#" className="c-logo" title="Navigate to the homepage." aria-label="CoolProject&Co" />
+            {/*<a href="#" className="c-logo" title="Navigate to the homepage." aria-label="CoolProject&Co" />*/}
+            <img src="https://raw.githubusercontent.com/oh-wonjune/modoos-class-contents/main/icon.png" style={{width:"70px"}}/>
             <nav className="c-navigation">
               <ul>
                 <li><button aria-label="Team performance." className="c-navigation__button"><i aria-hidden="true" className="far fa-dot-circle" /></button></li>
@@ -75,19 +76,9 @@ const Container: FC = () => {
               <h1>JavaScript 수업시간</h1>
               <span><i aria-hidden="true" className="fas fa-user-friends" />1팀</span>
             </header>
-            <div className="c-video-information">
-              <div className="c-video-invited">
-                <div className="c-video-invited__attendees">Invited to call: <span>6</span></div>
-                <div className="c-video-invited__absentees">Absent people: <span>2</span></div>
-              </div>
-              <button>Add user to the call</button>
-            </div>
             <div className="c-webcam">
               <div className="c-webcam-container">
-
-
                 <div className="c-webcam-inchat">
-
                 </div>
                 <div className="c-webcam__video-controls">
                   <ul>
