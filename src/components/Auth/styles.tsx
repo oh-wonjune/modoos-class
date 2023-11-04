@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   font-family: 'Montserrat', sans-serif;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ active: boolean }>`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -13,6 +13,13 @@ export const Container = styled.div`
   width: 768px;
   max-width: 100%;
   min-height: 480px;
+  
+  ${props => props.active && `
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-top: 1rem;
+  `}
 `;
 
 export const FormContainer = styled.div`

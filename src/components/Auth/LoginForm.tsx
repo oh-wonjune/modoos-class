@@ -6,10 +6,20 @@ import {
 } from './styles';
 
 const LoginForm: FC = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleSignUpClick = () => {
+        setIsActive(true)
+    };
+
+    const handleSignInClick = () => {
+        setIsActive(false)
+    };
+
 
     return (
         <Wrapper>
-            <Container>
+            <Container active={isActive}>
                 <SignUpContainer>
                     <StyledForm action="#">
                         <h1>Create Account</h1>
@@ -45,24 +55,16 @@ const LoginForm: FC = () => {
                         <OverlayLeft>
                             <h1>Welcome Back!</h1>
                             <p>To keep connected with us please login with your personal info</p>
-                            <GhostButton>Sign In</GhostButton>
+                            <GhostButton onClick={handleSignInClick}>Sign In</GhostButton>
                         </OverlayLeft>
                         <OverlayRight>
                             <h1>Hello, Friend!</h1>
                             <p >Enter your personal details and start journey with us</p>
-                            <GhostButton>Sign Up</GhostButton>
+                            <GhostButton onClick={handleSignUpClick}>Sign Up</GhostButton>
                         </OverlayRight>
                     </Overlay>
                 </OverlayContainer>
             </Container>
-            <Footer>
-                <FooterP>
-                    Created with <FooterIcon className="fa fa-heart"/> by
-                    <FooterLink target="_blank" href="#">Arun</FooterLink>
-                    - Read how I created this and how you can join the challenge
-                    <FooterLink target="_blank" href="#">here</FooterLink>.
-                </FooterP>
-            </Footer>
         </Wrapper>
     );
 };
