@@ -19,8 +19,8 @@ const LoginForm: FC = () => {
 
     return (
         <Wrapper>
-            <Container active={isActive}>
-                <SignUpContainer>
+            <Container >
+                <SignUpContainer active={isActive}>
                     <StyledForm action="#">
                         <h1>Create Account</h1>
                         <SocialContainer>
@@ -35,7 +35,7 @@ const LoginForm: FC = () => {
                         <StyledButton>Sign Up</StyledButton>
                     </StyledForm>
                 </SignUpContainer>
-                <SignInContainer>
+                <SignInContainer active={isActive}>
                     <StyledForm action="#">
                         <h1 style={{fontWeight : "bold"}}>Sign in</h1>
                         <SocialContainer>
@@ -50,14 +50,14 @@ const LoginForm: FC = () => {
                         <StyledButton>Sign In</StyledButton>
                     </StyledForm>
                 </SignInContainer>
-                <OverlayContainer>
-                    <Overlay>
-                        <OverlayLeft>
+                <OverlayContainer active={isActive}>
+                    <Overlay active={isActive}>
+                        <OverlayLeft active={isActive}>
                             <h1>Welcome Back!</h1>
                             <p>To keep connected with us please login with your personal info</p>
                             <GhostButton onClick={handleSignInClick}>Sign In</GhostButton>
                         </OverlayLeft>
-                        <OverlayRight>
+                        <OverlayRight active={isActive}>
                             <h1>Hello, Friend!</h1>
                             <p >Enter your personal details and start journey with us</p>
                             <GhostButton onClick={handleSignUpClick}>Sign Up</GhostButton>

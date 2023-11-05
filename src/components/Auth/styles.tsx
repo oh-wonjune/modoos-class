@@ -29,17 +29,21 @@ export const FormContainer = styled.div`
   transition: all 0.6s ease-in-out;
 `;
 
-export const SignUpContainer = styled(FormContainer)`
+export const SignUpContainer = styled(FormContainer)<{ active: boolean }>`
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
+  transform: ${props => props.active ? 'translateX(100%)' : 'none'};
+  transition: all 0.6s ease-in-out;
 `;
 
-export const SignInContainer = styled(FormContainer)`
+export const SignInContainer = styled(FormContainer)<{ active: boolean }>`
   left: 0;
   width: 50%;
   z-index: 2;
+  transform: ${props => props.active ? 'translateX(100%)' : 'none'};
+  transition: all 0.6s ease-in-out;
 `;
 
 export const StyledForm = styled.form`
@@ -101,7 +105,7 @@ export const GhostButton = styled(StyledButton)`
   border-color: #FFFFFF;
 `;
 
-export const OverlayContainer = styled.div`
+export const OverlayContainer = styled.div<{ active: boolean }>`
   position: absolute;
   top: 0;
   left: 50%;
@@ -110,16 +114,17 @@ export const OverlayContainer = styled.div`
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
   z-index: 100;
+  transform: ${props => props.active ? 'translateX(-100%)' : 'none'};
 `;
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<{ active: boolean }>`
   background: linear-gradient(to right, #FF4B2B, #FF416C);
   color: #FFFFFF;
   position: relative;
   left: -100%;
   height: 100%;
   width: 200%;
-  transform: translateX(0);
+  transform: ${props => props.active ? 'translateX(50%)' : 'translateX(0)'};
   transition: transform 0.6s ease-in-out;
 `;
 
@@ -138,13 +143,15 @@ export const OverlayPanel = styled.div`
   transition: transform 0.6s ease-in-out;
 `;
 
-export const OverlayLeft = styled(OverlayPanel)`
-  transform: translateX(-20%);
+export const OverlayLeft = styled(OverlayPanel)<{ active: boolean }>`
+  transform: ${props => props.active ? 'translateX(0)' : 'translateX(-20%)'};
+  transition: transform 0.6s ease-in-out;
 `;
 
-export const OverlayRight = styled(OverlayPanel)`
+export const OverlayRight = styled(OverlayPanel)<{ active: boolean }>`
   right: 0;
-  transform: translateX(0);
+  transform: ${props => props.active ? 'translateX(20%)' : 'translateX(0)'};
+  transition: transform 0.6s ease-in-out;
   
   h1{
         font-weight:bold;
