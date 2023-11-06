@@ -20,6 +20,7 @@ const LoginForm: FC = () => {
     return (
         <Wrapper>
             <Container >
+
                 <SignUpContainer active={isActive}>
                     <StyledForm action="#">
                         <h1>Create Account</h1>
@@ -35,7 +36,9 @@ const LoginForm: FC = () => {
                         <StyledButton>Sign Up</StyledButton>
                     </StyledForm>
                 </SignUpContainer>
+
                 <SignInContainer active={isActive}>
+                    {!isActive ?
                     <StyledForm action="#">
                         <h1 style={{fontWeight : "bold"}}>Sign in</h1>
                         <SocialContainer>
@@ -49,7 +52,23 @@ const LoginForm: FC = () => {
                         <ForgetButton>Forgot your password?</ForgetButton>
                         <StyledButton>Sign In</StyledButton>
                     </StyledForm>
+                        :
+                        <StyledForm action="#">
+                        <h1 style={{fontWeight : "bold"}}>Create Account</h1>
+                        <SocialContainer>
+                            <SocialIcon href="#"><i className="fab fa-facebook-f" style={{color:"black",fontSize:"14px"}}/></SocialIcon>
+                            <SocialIcon href="#"><i className="fab fa-google-plus-g" style={{color:"black",fontSize:"14px"}}/></SocialIcon>
+                            <SocialIcon href="#"><i className="fab fa-linkedin-in" style={{color:"black",fontSize:"14px"}}/></SocialIcon>
+                        </SocialContainer>
+                        <span>or use your email for registration</span>
+                        <StyledInput type="Name" placeholder="Name"/>
+                        <StyledInput type="email" placeholder="Email"/>
+                        <StyledInput type="password" placeholder="Password"/>
+                        <StyledButton>Sign Up</StyledButton>
+                    </StyledForm>
+                    }
                 </SignInContainer>
+
                 <OverlayContainer active={isActive}>
                     <Overlay active={isActive}>
                         <OverlayLeft active={isActive}>

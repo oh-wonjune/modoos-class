@@ -146,6 +146,19 @@ export const OverlayPanel = styled.div`
 export const OverlayLeft = styled(OverlayPanel)<{ active: boolean }>`
   transform: ${props => props.active ? 'translateX(0)' : 'translateX(-20%)'};
   transition: transform 0.6s ease-in-out;
+  
+   h1{
+        font-weight:bold;
+        margin:0;
+  }
+  
+  p {
+        font-size: 14px;
+        font-weight: 100;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+    }
 `;
 
 export const OverlayRight = styled(OverlayPanel)<{ active: boolean }>`
